@@ -14,43 +14,60 @@
 */
 
 /* Body Header Styles */
+/* For the body, I added a webkit-filter and a filter and set them both to the same thing. The only thing that was changed was the 10 was set to negavive to balance them out. */
 body {
-    -webkit-filter: drop-shadow(10px 0px 50px rgb(51, 51, 51));
-    filter: drop-shadow(10px 0px 50px rgb(51, 51, 51));
+    -webkit-filter: drop-shadow(10px 10px 50px rgb(51, 51, 51));
+    filter: drop-shadow(-10px 10px 50px rgb(51, 51, 51));
 }
 
 
 /* Navigation Tabs List Styles */
+/* Within the body I nested a header for the nav and gave it a class of tabs. I set the background to this witha url and centered it and covered it 100% with a tiling of none. I created the same class but this time I added an li for the list. I transmored it with a perspective of 50px and rotated it on the X axis 20deg. After that, I created a body with a header nested in and a class of tabs and an li with the psuedo element of hover and active. I set this all with a background color of white .  */
 body>header nav.tabs {
     background: url(sf_back1.png) center center/ 100% no-repeat;
 
 }
 
 body>header nav.tabs li {
-    perspective: 50px;
-    transform: rotateX(20deg);
+    transform: perspective(50px) rotateX(20deg);
 }
 
-body>header nav.tabs li:hover {
+body>header nav.tabs li:hover,
+body>header nav.tabs li:active {
     background-color: rgb(231, 231, 231);
 }
 
 /* Left Section Styles */
+/* The next thing I imputed was a section with an id of left whith a nav and a class if that of vertical. I gave it a solid border and a border radius. I used the same elment and class but also gave it an h1 with a border radius of right and left set to 24px*/
 section#left nav.vertical {
-    border: 1px solid rgb(20, 167, 170);
+    border: solid 1px rgb(20, 167, 170);
     border-radius: 25px;
 }
 
 section#left nav.vertical h1 {
     border-top-left-radius: 24px;
-    border-top-right-radius: 23px;
+    border-top-right-radius: 24px;
 }
 
 
 
 /* Center Article Styles */
+/* For this section, I gave it an elment of section with an id of center and an article. I gave it a background witha gradient set to white stopping at 30% and an rgb. I gave it a solid border with 1px and gave it an rgb too. Next, I gave it a border radius of 50px and a box-shadow with an rgb with an offset */
 section#center article {
-    background: radial-gradient()
+    background: radial-gradient(white 30%, rgb(151, 151, 151));
+    border: solid 1px rgb(151, 151, 151);
+    border-radius: 50px;
+    box-shadow: rgb(51, 51, 51) 10px 10px 20px;
 }
 
 /* Blockquote Styles */
+/* The last thing I did was create a blockquote element and set the background with a url and set the tiling to no repeat. I then gave it a background size and a filter of drop shadow with an rgb. Lastly, I created a cite element with an imge set with a border radius set to 50% */
+blockquote {
+    background: url(sf_speech.png) no-repeat;
+    background-size: 100% 100%;
+    filter: drop-shadow(5px 5px 10px rgb(51, 51, 51));
+}
+
+cite img {
+    border-radius: 50%;
+}
